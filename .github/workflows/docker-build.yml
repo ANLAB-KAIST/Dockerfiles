@@ -23,10 +23,10 @@ jobs:
         run: |
           docker build ${{ matrix.image }} --tag ${{matrix.image}}:latest
 
-      # - name: Log into GitHub Container Registry
-      #   run: echo "${{ secrets.CR_TOKEN }}" | docker login https://ghcr.io -u ${{ secrets.CR_NAME }} --password-stdin
+      - name: Log into GitHub Container Registry
+        run: echo "${{ secrets.CR_TOKEN }}" | docker login https://ghcr.io -u ${{ secrets.CR_NAME }} --password-stdin
 
-      # - name: Push image to GitHub Container Registry
-      #   run: |
-      #     docker tag ${{matrix.image}}:latest $CR_PATH/${{matrix.image}}:latest
-      #     docker push $CR_PATH/${{matrix.image}}:latest
+      - name: Push image to GitHub Container Registry
+        run: |
+          docker tag ${{matrix.image}}:latest $CR_PATH/${{matrix.image}}:latest
+          docker push $CR_PATH/${{matrix.image}}:latest

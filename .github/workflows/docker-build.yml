@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         image:
-          ["git-jekyll", "jenkins", "actions-runner", "dnsmasq", "iptables"]
+          ["git-jekyll", "jenkins", "actions-runner", "dnsmasq", "iptables", "dnscrypt-proxy"]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

@@ -30,4 +30,7 @@ jobs:
         run: |
           docker tag ${{matrix.image}}:latest $CR_PATH/${{matrix.image}}:latest
           docker push $CR_PATH/${{matrix.image}}:latest
+  keep-alive:
+    runs-on: ubuntu-latest
+    steps:
       - uses: gautamkrishnar/keepalive-workflow@v1
